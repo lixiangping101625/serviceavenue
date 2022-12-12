@@ -1,0 +1,26 @@
+server:
+  port: 20001
+spring:
+  application:
+    name: gateway
+  cloud:
+    gateway:
+      discovery:
+        locator:
+          enabled: false
+          lower-case-service-id: true
+    # 使用nacos作为注册中心
+    nacos:
+      discovery: true
+      server-addr: 127.0.0.1:8848
+
+management:
+  security:
+    enables: false
+  endpoints:
+    web:
+      exposure:
+        include: '*'
+  endpoint:
+    health:
+      show-details: always
