@@ -9,19 +9,19 @@
         <relativePath>../../../pom.xml</relativePath>
     </parent>
     <modelVersion>4.0.0</modelVersion>
-    <artifactId>user-pojo</artifactId>
+    <artifactId>order-mapper</artifactId>
 
     <dependencies>
         <dependency>
-            <groupId>javax.persistence</groupId>
-            <artifactId>persistence-api</artifactId>
-            <version>1.0</version>
+            <groupId>${project.groupId}</groupId>
+            <artifactId>order-pojo</artifactId>
+            <version>${project.version}</version>
         </dependency>
         <dependency>
-            <groupId>org.hibernate.validator</groupId>
-            <artifactId>hibernate-validator</artifactId>
+            <groupId>${project.groupId}</groupId>
+            <artifactId>avenue-common</artifactId>
+            <version>${project.version}</version>
         </dependency>
     </dependencies>
-
 
 </project>

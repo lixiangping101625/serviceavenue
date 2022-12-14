@@ -6,7 +6,7 @@
     <select id="list" resultType="com.hlkj.pojo.User">
         SELECT
             u.id as id,
-            u.username as username,
+            u.`username` as username,
             u.password as password,
             u.mobile as mobile
         FROM
@@ -17,7 +17,7 @@
             parameterType="long">
         SELECT
             u.id as id,
-            u.username as username,
+            u.`username` as username,
             u.password as password,
             u.mobile as mobile
         FROM
@@ -29,12 +29,12 @@
             parameterType="java.lang.String">
         SELECT
             u.id as id,
-            u.username as username,
+            u.`username` as username,
             u.password as password,
             u.mobile as mobile
         FROM
         user u
-        where u.username = #{username}
+        where u.`username` = #{username}
         and u.password = #{password}
     </select>
 

@@ -6,6 +6,7 @@ import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -30,7 +31,12 @@ public class UserController {
     @ApiOperation(value = "查询所有", tags = "查询所有用户信息")
     @GetMapping("/listAll")
     public List<User> list(){
+
         return userService.listAll();
+    }
+    @GetMapping("/info/{id}")
+    public User info(@PathVariable(name = "id") Long id){
+        return userService.detail(id);
     }
 
 }

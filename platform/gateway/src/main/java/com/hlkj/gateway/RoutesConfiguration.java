@@ -24,6 +24,8 @@ public class RoutesConfiguration {
                         .uri("lb://domain-user-service"))
                 .route("item-service-route", r -> r.path("/item/**")
                         .uri("lb://domain-item-service"))
+                .route("order-service-route", r -> r.path("/order/**")
+                        .uri("lb://domain-order-service"))
                 .build();
     }
 

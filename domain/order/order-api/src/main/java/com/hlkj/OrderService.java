@@ -1,6 +1,6 @@
 package com.hlkj;
 
-import com.hlkj.pojo.User;
+import com.hlkj.pojo.Order;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -9,17 +9,16 @@ import java.util.List;
 
 /**
  * @author Lixiangping
- * @createTime 2022年12月12日 17:38
+ * @createTime 2022年10月31日 20:19
  * @decription:
  */
-@RequestMapping("user-api")
-public interface UserService {
-
+@RequestMapping("order-api")
+public interface OrderService {
 
     @GetMapping("listAll")
-    List<User> listAll();
+    List<Order> listAll();
 
     @GetMapping("detail")
-    User detail(@RequestParam(name = "userId") Long userId);
+    Order detail(@RequestParam("id") Long id);
 
 }
