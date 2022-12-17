@@ -65,3 +65,13 @@ management:
   endpoint:
     health:
       show-details: always
+
+
+seata:
+  enabled: true
+  service:
+    vgroup-mapping:
+      seata-product: default
+    grouplist:
+      default: 127.0.0.1:8091
+    disable-global-transaction: false

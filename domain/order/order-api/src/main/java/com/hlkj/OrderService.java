@@ -1,6 +1,7 @@
 package com.hlkj;
 
 import com.hlkj.pojo.Order;
+import com.hlkj.pojo.UnifyResponse;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -20,5 +21,8 @@ public interface OrderService {
 
     @GetMapping("detail")
     Order detail(@RequestParam("id") Long id);
+
+    @GetMapping("delete")
+    UnifyResponse delete(@RequestParam("id") Long id);
 
 }

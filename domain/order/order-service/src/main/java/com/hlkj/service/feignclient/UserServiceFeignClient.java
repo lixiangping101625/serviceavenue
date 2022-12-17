@@ -1,5 +1,6 @@
 package com.hlkj.service.feignclient;
 
+import com.hlkj.pojo.UnifyResponse;
 import com.hlkj.pojo.User;
 import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -24,5 +25,8 @@ public interface UserServiceFeignClient {
 
     @GetMapping("/user/info/{id}")
     User info(@PathVariable(name = "id") Long id);
+
+    @GetMapping("delete")
+    UnifyResponse delete(@RequestParam(name = "userId") Long userId);
 
 }

@@ -2,10 +2,7 @@ package com.hlkj;
 
 import com.hlkj.pojo.Order;
 import com.hlkj.pojo.UnifyResponse;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import javax.annotation.Resource;
 import java.util.List;
@@ -32,5 +29,10 @@ public class OrderController {
     public UnifyResponse detail(@PathVariable("id") Long id){
         Order order = orderService.detail(id);
         return UnifyResponse.buildSuccess(order);
+    }
+
+    @GetMapping("/delete")
+    UnifyResponse delete(@RequestParam("id") Long id){
+        return orderService.delete(id);
     }
 }

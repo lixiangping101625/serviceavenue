@@ -1,9 +1,8 @@
 package com.hlkj;
 
+import com.hlkj.pojo.UnifyResponse;
 import com.hlkj.pojo.User;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -21,5 +20,11 @@ public interface UserService {
 
     @GetMapping("detail")
     User detail(@RequestParam(name = "userId") Long userId);
+
+    @PostMapping("/add")
+    UnifyResponse save(@RequestBody User user);
+
+    @GetMapping("delete")
+    UnifyResponse delete(@RequestParam(name = "userId") Long userId);
 
 }
